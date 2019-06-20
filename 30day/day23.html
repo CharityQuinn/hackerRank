@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 23 Challenge: Print Levels of Binary Tree</h2>
+</head>
+
+<body>
+  <script>
+
+    // Start of function levelOrder
+    this.levelOrder = function (root) {
+
+      // Add your code here
+      // To print values separated by spaces use process.stdout.write(someValue + ' ')
+      let input = "7/n3/n5/n2/n1/n4/n6/n7";
+      let node = input.split('\n').map(Number);
+      let long = parseInt(input[0]);
+
+      if (root === null) {
+        return -1
+      } else {
+        let arr = [root];
+        while (arr.length) {
+          const {data, left, right} = arr.shift();
+          process.stdout.write(data + ' ');
+          arr.push(...[left, right].filter(Boolean));
+        }
+        
+      }
+
+
+    }; // End of function levelOrder
+
+  </script>
+</body>
+
+</html>

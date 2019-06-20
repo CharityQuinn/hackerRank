@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 19 Challenge: Math Factors</h2>
+</head>
+
+<body>
+  <script>
+let n = 6;
+sumDivisors(6);
+sumDivisors(10);
+function sumDivisors(num){
+  let sum = 0;
+  for (let i = 1; i <= num; i++){
+    if (!(num % i)) {
+      sum += i;
+      console.log(sum);
+    }
+  }
+  console.log(sum);
+}
+// java:
+public int divisorSum(int n) {
+        int sum = n+1;
+        for(int i=2;i<=Math.sqrt(n);i++) {
+            if(n%i==0){
+                sum = sum+i;
+                if((n/i)!=i){
+                    sum=sum+(n/i);
+                }
+            }
+        }
+        return n==1?1:sum;
+    }
+
+
+   </script>
+   </body>
+   </html>

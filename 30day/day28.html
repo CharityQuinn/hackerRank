@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HackerRank</title>
+    <h2>Day 28 Challenge: Pinpoint patterns with RegEX</h2>
+</head>
+
+<body>
+    <script>
+        let readLine =
+            "6\nriya riya@gmail.com\njulia julia@julia.me\njulia sjulia@gmail.com\njulia julia@gmail.com\nsamantha samantha@gmail.com\ntanya tanya@gmail.com"
+
+        let input = readLine.split("\n");
+
+        'use strict';
+
+        process.stdin.resume();
+        process.stdin.setEncoding('utf-8');
+
+        let inputString = '';
+        let currentLine = 0;
+
+        process.stdin.on('data', inputStdin => {
+            inputString += inputStdin;
+        });
+
+        process.stdin.on('end', _ => {
+            inputString = inputString.replace(/\s*$/, '')
+                .split('\n')
+                .map(str => str.replace(/\s*$/, ''));
+
+            main();
+        });
+
+        function readLine() {
+            return inputString[currentLine++];
+        }
+
+
+
+        function main() {
+            var output = [];
+            const N = parseInt(readLine(), 10);
+
+            for (let NItr = 0; NItr < N; NItr++) {
+                const firstNameEmailID = readLine().split('\n');
+
+                const firstName = firstNameEmailID[0];
+
+                const emailID = firstNameEmailID[1];
+                for (let i = 0; i < firstNameEmailID.length; i++) {
+                    const element = firstNameEmailID[i];
+                    let match = element.match(/[a-z].*(?=\s.*@gmail.com)/g);
+                    if (match) {
+                        output.push(match[0]);
+                    }
+                };
+            }
+            output = output.sort().join("\n");
+            console.log(output);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Min and Max of adding up an array</h2>
+</head>
+<body>
+  <script>
+    let arr = [1, 2, 3, 4, 5];
+    miniMaxSum(arr);
+  function miniMaxSum(arr) {
+    let max = 0;
+    let min = 0;
+    var result = arr.map(Number);
+    max = Math.max.apply(null, result);
+    min = Math.min.apply(null, result);
+    let res = 0;
+    for (let i = 0; i < arr.length; i++) {
+        res = res + parseInt(arr[i]);
+        console.log(res);
+    }
+    let low = res - max;
+    let high = res - min;
+    console.log(low, high);
+
+
+}
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 15 Challenge: Node List</h2>
+</head>
+
+<body>
+  <script>
+    function readLine() {
+      return input_stdin_array[input_currentline++];
+    }
+    function Node(data) {
+      this.data = data;
+      this.next = null;
+    }
+    Solution();
+    var myList = [];
+    function Solution() {
+      var head = 5;
+      var data = "5\n3\n4\n1\n5\n9"
+      this.insert = function (head, data) {
+
+  //complete this method
+  let nextNode = new Node(data);
+  if(head == null) {
+      head = nextNode;
+  }
+  else if(head.next==null){
+      head.next = nextNode;
+      
+  } else{
+      let cour = head;
+      while(cour.next != null) {
+          cour = cour.next;
+      }
+      cour.next = nextNode;
+  }
+  return head;
+};
+
+</script>
+</body>
+</html>

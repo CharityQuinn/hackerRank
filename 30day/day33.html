@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank Day 2 and 3</title> 
+  <h3>Javascript Split Reverse Join and isPositive</h3>
+</head>
+
+<body>
+  <script>
+
+    let s = "1234";
+    reverseString(s);
+    function reverseString(s) {
+      try {
+
+        console.log(s.split("").reverse().join(""));
+      }
+      catch (e) {
+        console.log(e.message);
+        console.log(s);
+      }
+    }
+
+    let a = "2\n-1\n20";
+    isPositive(a);
+    function isPositive(a) {
+      try{
+           if (a < 0){
+               throw "Negative Error"
+           } else
+            if (a == 0){
+                throw "Zero Error";
+            } else {
+                return "YES"
+            } 
+            
+        }  catch(err){
+            return err;
+        }  
+    }
+    
+
+
+
+  </script>
+</body>
+
+</html>

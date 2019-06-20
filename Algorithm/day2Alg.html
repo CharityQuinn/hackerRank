@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Day 2 Algorithms</h2>
+</head>
+<body>
+  <script>
+  // Complete the compareTriplets function below.
+  let a = [17, 28, 30];
+  let b = [99, 16, 8];
+  compareTriplets(a, b);
+function compareTriplets(a, b) {
+
+    var ratings =  Array.prototype.slice.call(arguments);
+    var a = 0, b = 0;
+    var alice = ratings.splice(0,ratings.length/2);
+    var bob = ratings.splice(0,ratings.length);
+    for(let i = 0; i < 3; i++){
+        if(alice[0][i] > bob[0][i]){
+          console.log(alice[0][i]);
+            a++;
+        }
+        if(alice[0][i] < bob[0][i]){
+            b++;
+        }
+    }
+        return [a,b];
+}
+  </script>
+  
+</body>
+</html>

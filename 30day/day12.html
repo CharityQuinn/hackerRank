@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 12 Challenge: Obect Oriented Parent/Child</h2>
+</head>
+
+<body>
+  <script>
+
+class Student extends Person {
+    /*	
+    *   Class Constructor
+    *   
+    *   @param firstName - A string denoting the Person's first name.
+    *   @param lastName - A string denoting the Person's last name.
+    *   @param id - An integer denoting the Person's ID number.
+    *   @param scores - An array of integers denoting the Person's test scores.
+    */
+    // Write your constructor here
+    constructor(firstName, lastName, identification, scores) {
+      super(firstName, lastName, identification);
+    this.scores = scores;
+  }
+    
+   
+    /*	
+    *   Method Name: calculate
+    *   @return A character denoting the grade.
+    */
+    // Write your method here
+    calculate() {
+      var grade = 0;
+      this.scores.forEach(element => {
+        grade += element;
+
+      }); 
+      grade = grade/this.scores.length;
+      if (grade >= 90 && grade <= 100) {
+        return "O";
+      } else if (grade >= 80 && grade < 90) {
+        return "E";
+      } else if (grade >= 70 && grade < 80) {
+        return "A";
+      } else if (grade >= 55 && grade < 70) {
+        return "P";
+      } else if (grade >= 40 && grade < 55) {
+        return "D";
+      } else if (grade < 40){
+        return "T";
+      }
+    }
+}
+  </script>
+
+  </body>
+  </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 11 Challenge: 2 Dimensional Arrays</h2>
+</head>
+
+<body>
+  <script>
+    main();
+    function main() {
+      let arr = Array(6);
+      arr = [
+        [1, 1, 1, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [1, 1, 1, 0, 0, 0],
+        [0, 0, 2, 4, 4, 0],
+        [0, 0, 0, 2, 0, 0],
+        [0, 0, 1, 2, 4, 0]
+
+      ];
+
+      console.log("This is the array: ", arr);
+      
+      
+      
+      let totals = [];
+      let totIndex = 0;
+      for (let i = 0; i < (arr.length - 2); i++) {
+        for (let j = 0; j < (arr.length - 2); j++) {
+         totals[totIndex] = arr[i][j] + arr[i][j+1] + arr[i][j+2]
+                + arr[i+1][j+1] + arr[i+2][j] + arr[i+2][j+1]
+                + arr[i+2][j+2];
+         totIndex++;
+        }
+        
+      }
+      
+      totals.sort(function(a, b){return b - a});
+      console.log(totals[0]);
+     
+    }
+    
+
+
+
+
+  </script>
+</body>
+
+</html>

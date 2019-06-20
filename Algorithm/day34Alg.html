@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Algorithms finding hackerrank in words</h2>
+</head>
+
+<body>
+  <script>
+    // Complete the hackerrankInString function below.
+    let s = "2\nhereiamstackerrank\nhackerworld";
+    hackerrankInString(s);
+    function hackerrankInString(s) {
+      let regex = /h\w*a\w*c\w*k\w*e\w*r\w*r\w*a\w*n\w*k/gm;
+      return (s.match(regex)) ? "YES" : "NO";
+    };
+    let pos = 0;
+
+    s.split('').forEach(char => {
+      if (char === 'hackerrank'[pos]) {
+        pos++;
+      }
+    });
+
+    return pos === 'hackerrank'.length ? 'YES' : 'NO';
+
+  </script>
+</body>
+
+</html>

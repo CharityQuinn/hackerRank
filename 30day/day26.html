@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 26 Challenge: Layering</h2>
+</head>
+
+<body>
+  <script>
+    processData("31 12 2009\n1 1 2010")
+    function processData(input) {
+      let date = input.split('\n').map(element => element.split(" ").map(dateNum => Number(dateNum)));
+      let fine;
+      let returnDay = date[0][0];
+      let returnMnth = date[0][1];
+      let returnYr = date[0][2];
+      let expDay = date[1][0];
+      let expMnth = date[1][1];
+      let expYr = date[1][2];
+
+      let feeDay = returnDay - expDay;
+      let feeMnth = returnMnth - expMnth;
+      let feeYr = returnYr - expYr;
+     
+      if (feeYr < 0) {
+        fine = 0;
+      } else {
+
+        if (feeDay < 0 && feeMnth < 0 && feeYr <= 0) {
+          fine = 0;
+        }
+
+        if (feeYr > 0) {
+          fine = 10000;
+        }
+        if (feeMnth == 0 && feeYr == 0) {
+          fine = parseInt(feeDay) * 15;
+        }
+        if (feeYr == 0 && feeMnth > 0) {
+          fine = parseInt(feeMnth) * 500;
+        }
+      }
+      console.log(fine);
+    }
+
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Day 29 Bit and Binary words</h2>
+</head>
+<body>
+  
+  <script>
+  
+  function processData(input) {
+    const   processedInput = input.slice(1)
+            .forEach(item => {
+
+                const first = Number(item.substring(0, item.indexOf(' ')));
+                const second = Number(item.substring(item.indexOf(' ')));
+
+                if (second === first) {
+                    console.log(second - first);
+                } else if (((second - 1) | second) <= first) {
+                    console.log(second - 1);
+                } else {
+                    console.log(second - 2);
+                }
+            });
+}
+
+  </script>
+
+</body>
+</html>

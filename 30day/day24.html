@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 24 Challenge: Linked Lists</h2>
+</head>
+
+<body>
+  <script>
+    this.removeDuplicates=function(head){
+      //Write your code here
+        if (head.next) {
+            if (head.next.data === head.data) {
+                return this.removeDuplicates(head.next);
+            } else {
+                head.next = this.removeDuplicates(head.next);
+            }
+        }
+        return head;
+    
+    }
+
+  </script>
+</body>
+</html>

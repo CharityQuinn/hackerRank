@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 17 Challenge: Math.Pow</h2>
+</head>
+
+<body>
+  <script>
+
+    // Declare your class here.
+
+    class Calculator {
+      power(n,p) {
+        try {
+          if (n >= 0 && p >= 0) {
+            return Math.pow(n, p)
+          } else {
+            throw new Error('n and p should be non-negative');
+          }
+        }
+        catch (error){
+          console.error(error);
+        };
+      }
+      
+    }
+
+  </script>
+</body>
+
+</html>

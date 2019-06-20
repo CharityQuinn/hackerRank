@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PhoneBook</title>
+</head>
+
+<body>
+    <script>
+        const input = "4 sam 1321234 tom 13343212 rich 9808977 carlos 36674778 rich tom jose carlos"
+        const arr = input.split(" ");
+        const n = parseInt(arr[0]);
+        const query = [];
+        let phoneBook = [];
+
+        function contacts() {
+            for (let i = 1; i < (arr.length + 1); i++) {
+                let contact = {
+                    name: "",
+                    phoneNumber: ""
+                };
+                if (!isNaN(arr[i + 1])) {
+                    contact.name = arr[i];
+                    i++;
+                    contact.phoneNumber = arr[i];
+                    phoneBook.push(contact);
+                } else if (isNaN(arr[i])) {
+                    query.push(arr[i]);
+                }
+            }
+            let phoneBook2 = [];
+            for (let i = 0; i < n; i++) {
+                phoneBook2.push(phoneBook[i]);
+            };
+            phoneBook = phoneBook2;
+        };
+        contacts();
+
+        for (let i = 0; i < (query.length - 1); i++) {
+            if (phoneBook.find(contact => contact.name === query[i])) {
+                phoneBook.map(person => {
+                    if (person.name === query[i]) {
+                        console.log(person.name + "=" + person.phoneNumber);
+                    }
+                })
+            } else {
+                console.log(query[i] + " Not Found ")
+            }
+        }
+    </script>
+</body>
+
+</html>

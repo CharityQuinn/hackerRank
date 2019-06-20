@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Day 10 Binary Numbers </title>
+</head>
+
+<body>
+
+  <script>
+    input = 439;
+    const n = parseInt(input, 10);
+
+    var binaryNum = n.toString(2);
+    var ones = 0;
+    var max = 0;
+
+    for (var i = 0; i < binaryNum.length; i++) {
+      if (binaryNum.substr(i, 1) == '1') {
+        ones++;
+        if (ones > max) {
+          max = ones;
+        }
+      } else {
+        ones = 0;
+      }
+    }
+
+    console.log(max);
+
+
+    console.log((n >>> 0).toString(2).split('0').sort().pop().length);
+
+
+  </script>
+</body>
+
+</html>

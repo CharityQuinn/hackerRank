@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Finding decimal equivents of piece of array over array length</h2>
+</head>
+
+<body>
+  <script>
+    let arr = [-4, 3, -9, 0, 4, 1];
+    minusPlus(arr);
+    function minusPlus(arr) {
+      var plusNum = 0;
+      let neg = 0;
+      let zero = 0;
+      let n = arr.length;
+      for (let i = 0; i < n; i++) {
+        if (arr[i] == 0) {
+          zero++;
+        }
+        if (arr[i] < 0) {
+          neg++;
+        }
+        if (arr[i] > 0) {
+          plusNum++;
+        }
+      }
+        console.log(plusNum, "Neg: ",neg," zero: ",zero);
+        let resp = (plusNum / n).toFixed(6);
+        let respn = (neg / n).toFixed(6);
+        let respz = (zero / n).toFixed(6);
+        console.log(resp);
+        console.log(respn);
+        console.log(respz);
+        return resp;
+        return respn;
+        return respz;
+
+    }
+  </script>
+
+ 
+</body>
+
+</html>

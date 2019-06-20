@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 14 Challenge: Obect Oriented Parent/Child</h2>
+</head>
+
+<body>
+  <script>
+    var elements = [20, 30, 60, 100];
+    var maximumDifference;
+    public Difference(int[] elements) {
+      this.elements = elements;
+    }
+
+    public void computeDifference() {
+      int max = 1, min = 100;
+      for (int e: elements) {
+        max = Math.max(max, e);
+        min = Math.min(min, e);
+      }
+      maximumDifference = max - min;
+    }
+
+  </script>
+</body>
+
+</html>

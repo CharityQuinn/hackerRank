@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <title>Hacker Rank</title>
+    <h2>Day 6 Test Code</h2>
+</head>
+
+<body>
+    <script>
+        // processData();
+
+        // function processData(T, Hacker, word2) {
+        //Enter your code here
+        //Given a string, S, of length N that is indexed from 0 to N-1, print its even-indexed and odd-indexed characters as 2 space-separated strings on a single line (see the Sample below for more detail).
+        //The first line contains an integer, T (the number of test cases). 
+        // Each line i of the T subsequent lines contain a String, S.
+
+
+
+
+        let input = "10\novyvzvptyvpvpxyztlrztsrztztqvrxtxuxq\nholtmuvzxrumuztyqyvpnji\ntmruzxzuwoskqysxztuvosuyrswrnmtxvzsrqwytzrxpltrwusxupw\nwxstwxuzuyuvyzrsxysxyuvyqxuxyskqwsyqumqrvopvowqumnvrxpwqpwsrnvrztxrxpvuxunvyzvupvupowvyzvzuzwvsrwv\nyrzxrxskrtlpwpmtpxvowrxrpxq\npryumtuntmovpwvowslj\nnosklrxrtyuxtmnurzsryuxtywqwqpxts\nfmpszyvqwxrtvpuwqszvyvotmsxsxuvzyvpwzrpmuxqwtswvytytzsnuxuyrp\nvtysqoutzurqxury\njkmsxzwrxzy";
+        // let input = "10\n ovyvzvptyvpvpxyztlrztsrztztqvrxtxuxq\n holtmuvzxrumuztyqyvpnji\n tmruzxzuwoskqysxztuvosuyrswrnmtxvzsrqwytzrxpltrwusxupw\n wxstwxuzuyuvyzrsxysxyuvyqxuxyskqwsyqumqrvopvowqumnvrxpwqpwsrnvrztxrxpvuxunvyzvupvupowvyzvzuzwvsrwv\n yrzxrxskrtlpwpmtpxvowrxrpxq\n pryumtuntmovpwvowslj\n nosklrxrtyuxtmnurzsryuxtywqwqpxts\n fmpszyvqwxrtvpuwqszvyvotmsxsxuvzyvpwzrpmuxqwtswvytytzsnuxuyrp\n vtysqoutzurqxury\n jkmsxzwrxzy";
+        let strArr = input.split("\n");
+        let n = parseInt(strArr[0]);
+
+            for (let i = 1; i < n + 1; i++) {
+                even = "";
+                odd = "";
+                for (let j = 0; j < strArr[i].length; j++) {
+                    even += strArr[i][j] + "";
+                    j++;
+                    if (j < strArr[i].length) {
+                        odd += strArr[i][j] + "";
+                    }
+                };
+                console.log(even + " " + odd)
+            }
+    </script>
+
+</body>
+
+</html>

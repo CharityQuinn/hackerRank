@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 22 Challenge: Binary Tree Search</h2>
+</head>
+
+<body>
+  <script>
+
+let input = "7/n3/n5/n2/n1/n4/n6/n7";
+
+this.getHeight = function (root) {
+
+// Add your code here
+if (root === null) {
+  return -1
+} else {
+  return (1 + Math.max(this.getHeight(root.left), this.getHeight(root.right)))
+}
+
+
+}; // End of function getHeight
+
+</script>
+</body>
+</html>

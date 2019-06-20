@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Caesar Cipher</h2>
+</head>
+<body>
+  <script>
+    // Complete the caesarCipher function below.
+    let s = "The end of the world";
+    let k = 3;
+
+function caesarCipher(s, k) {
+  
+    let resArr = [], alphabet = 'abcdefghijklmnopqrstuvwxyz'    let upCase = alphabet.toUpperCase(), spltArr = alphabet.split('')
+    if (k > alphabet.length) {
+        k = k % alphabet.length
+    }
+    spltArr.push(spltArr.splice(0, k).join(""))
+    let oneArr = spltArr.join(""), twoArr = oneArr.toUpperCase("")
+
+    for (let i = 0; i < s.length; i++) {
+        if (oneArr[alphabet.indexOf(s[i])] !== undefined) {
+            resArr.push(oneArr[alphabet.indexOf(s[i])])
+        } else if (twoArr[upCase.indexOf(s[i])] !== undefined) {
+            resArr.push(twoArr[upCase.indexOf(s[i])])
+        } else {
+            resArr.push(s[i])
+        }
+    }
+    return resArr.join("")
+}
+
+
+main();
+
+function main() {
+    // const ws = fs.createWriteStream(process.env.OUTPUT_PATH);
+    // const n = parseInt(readLine(), 10);
+    // let s = readLine();
+    // let k = parseInt(readLine(), 10);
+    let s = "The end of the world";
+    let k = 3;
+
+    let resArrult = caesarCipher(s, k);
+    ws.write(resArrult + "\n");
+
+    ws.end();
+}
+    
+  </script>
+</body>
+</html>
+

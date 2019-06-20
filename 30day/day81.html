@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HackerRank</title>
+  <h2>Day 8 Challenge: </h2>
+</head>
+
+<body>
+  <script>
+
+    input = "3\nsam 99912222\ntom 11122222\nharry 12299933\nsam\nedward\nharry";
+    processData(input);
+    function processData(input) {
+
+      const mapData = new Map();
+      const phoneList = input.split('\n')[0];
+      const inputArr = input.split('\n').slice(1);
+
+      for (let i = 0; i < inputArr.length; i++) {
+        let inputPerson = inputArr[i].split(' ');
+
+        if (i < phoneList) {
+          mapData.set(inputPerson[0], inputPerson[1]);
+        } else {
+          if (mapData.has(inputPerson[0])) {
+            console.log(inputPerson[0] + "=" + mapData.get(inputPerson[0]))
+          } else {
+            console.log("Not found");
+          }
+        }
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>

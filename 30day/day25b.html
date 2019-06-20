@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Day25</title>
+</head>
+
+<body>
+  <script>
+    let input = "20\n1\n9\n16\n25\n36\n49\n64\n81\n100\n121\n144\n169\n196\n225\n256\n289\n324\n361\n67\n10000005";
+    let listNum = input.split('\n').map(Number);
+    let long = parseInt(input[0]);
+
+    processData();
+
+    function processData() {
+      listNum.forEach(element => {
+        let listNum = input.split('\n').map(Number).slice(1);
+        if (element == 1) {
+          console.log(element);
+            primeStatus = "Not prime"
+          }
+          primeStatus = "Prime";
+          for (let i = 2; i * i < element; i++) {
+            console.log(element);
+            if (element % i === 0) {
+              primeStatus = "Not prime"
+            };
+          };
+
+          console.log(primeStatus);
+        });
+      
+    }
+/
+
+
+  </script>
+</body>
+
+</html>
