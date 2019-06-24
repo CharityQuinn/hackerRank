@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Day 9 Binary Calculator</h2>
+</head>
+
+<body>
+  <style>
+    body {
+      width: 33%;
+    }
+
+    #res {
+      background-color: lightgray;
+      border: solid;
+      height: 48px;
+      font-size: 20px;
+    }
+
+    #btn0,
+    #btn1 {
+      background-color: lightgreen;
+      color: brown;
+    }
+
+    #btnClr,
+    #btnEql {
+      background-color: darkgreen;
+      color: white;
+    }
+
+    #btnSum,
+    #btnSub,
+    #btnMul,
+    #btnDiv {
+      background-color: black;
+      color: red;
+    }
+
+    #btns {
+      width: 25%;
+      height: 36px;
+      font-size: 18px;
+      margin: 0px;
+      float: left;
+    }
+  </style>
+  <div id="container">
+    <div id="res"> </div>
+    <div id="btns">
+      <button id="btn0">0</button>
+      <button id="btn1">1</button>
+      <button id="btnClr">C</button>
+      <button id="btnEql">=</button>
+      <button id="btnSum">+</button>
+      <button id="btnSub">-</button>
+      <button id="btnMul">*</button>
+      <button id="btnDiv">/</button>
+    </div>
+
+  </div>
+  <script>
+    const buttons = {
+      'btn0': 0,
+      'btn1': 1,
+      'btnSum': '+',
+      'btnSub': '-',
+      'btnMul': '*',
+      'btnDiv': '/'
+    }
+
+    for (let obj in buttons) {
+      const btn = document.getElementById(obj);
+      btn.addEventListener('click', function () {
+        let res = document.getElementById('res');
+        res.innerHTML = res.innerHTML + buttons[obj];
+      })
+    }
+
+    const btnClr = document.getElementById('btnClr');
+    btnClr.addEventListener('click', function () {
+      let res = document.getElementById('res');
+      res.innerHTML = '';
+    })
+
+    const btnEql = document.getElementById('btnEql');
+    const sign = ['+', '-', '*', '/']
+    btnEql.addEventListener('click', function () {
+      let res = document.getElementById('res');
+      for (s of sign) {
+        if (res.innerHTML.indexOf(s) >= 0) {
+          switch (s) {
+            case '+': {
+              sarr = res.innerHTML.split('+');
+              res.innerHTML = (parseInt(sarr[0], 2) + parseInt(sarr[1], 2)).toString(2);
+              break;
+            }
+            case '-':
+              sarr = res.innerHTML.split('-');
+              res.innerHTML = (parseInt(sarr[0], 2) - parseInt(sarr[1], 2)).toString(2);
+              break;
+            case '*':
+              sarr = res.innerHTML.split('*');
+              res.innerHTML = (parseInt(sarr[0], 2) * parseInt(sarr[1], 2)).toString(2);
+              break;
+            case '/':
+              sarr = res.innerHTML.split('/');
+              res.innerHTML = (Math.floor(parseInt(sarr[0], 2) / parseInt(sarr[1], 2))).toString(2);
+              break;
+          }
+        }
+      }
+
+    });
+  </script>
+</body>
+
+</html>

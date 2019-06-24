@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Algorithm Circular Array Rotation</h2>
+</head>
+<body>
+  <script>
+    let input = "3 2 3\n1 2 3\n0\n1\n2"
+    let a = "3 2 3";
+    let k = "1 2 3";
+    let queries = "0 1 2";
+    circularArrayRotation(a, k, queries);
+     // Complete the circularArrayRotation function below.
+function circularArrayRotation(a, k, queries) {
+    let list = input.split('\n');
+    console.log("list:",list);
+    let arrFirst = list[1].split(' ');
+    console.log("arrFirst:",arrFirst);
+    let pop = list[0].split(' ')[1];
+    console.log("pop:",pop);
+    let n = arrFirst.length;
+    console.log("n:",n);
+    
+    for (let i = 2; i < list.length; i++) {
+        let m = list[i];
+        let oldM = (n + (m - (pop % n))) % n;
+        console.log(arrFirst[oldM]);
+    }
+}
+
+  </script>
+</body>
+</html>

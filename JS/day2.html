@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Conditional Statements</h2>
+</head>
+<body>
+  <script>
+    let score = 11;
+    getGrade(score);
+  function getGrade(score) {
+    let grade;
+    // Write your code here
+    grade = 'FEDCBA'[Math.floor(score / 5.0)];
+    return grade;
+
+    if (score > 25) {
+        grade = 'A';
+    } else if (score > 20) {
+        grade = 'B';
+    } else if (score > 15) {
+        grade = 'C';
+    } else if (score > 10) {
+        grade = 'D';
+    } else if (score > 5) {
+        grade = 'E';
+    } else {
+        grade = 'F';
+    }
+    return grade;
+}
+
+  </script>
+</body>
+</html>

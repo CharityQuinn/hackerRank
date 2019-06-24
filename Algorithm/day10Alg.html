@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Algorithm Utopian Tree</h2>
+</head>
+
+<body>
+  <script>
+    let input = "3\n0\n1\n4";
+    let list = input.split("\n");
+    let h = list[0];
+    let n = input.split("\n").splice(1);
+    console.log(n, h);
+    // Complete the utopianTree function below.
+    function utopianTree(n) {
+      let height = 1;
+      for (var i = 1; i <= n; i++) {
+        if (i % 2 === 0) {
+          height++;
+        } else {
+          height *= 2;
+        }
+      }
+      console.log(height);
+      // return height;
+
+    }
+    
+  </script>
+</body>
+
+</html>
