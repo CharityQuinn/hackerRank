@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hacker Rank</title>
+  <h2>Switch Statements</h2>
+</head>
+
+<body>
+  <script>
+    let s = "kdfgt"
+    getLetter(s);
+    function getLetter(s) {
+      let letter;
+      // Write your code here
+      switch (true) {
+        case 'aeiou'.includes(s[0]):
+          letter = 'A';
+          break;
+        case 'bcdfg'.includes(s[0]):
+          letter = 'B';
+          break;
+        case 'hjklm'.includes(s[0]):
+          letter = 'C';
+          break;
+        case 'npqrstvwxyz'.includes(s[0]):
+          letter = 'D';
+          break;
+      }
+      console.log(letter);
+      // return letter;
+    }
+
+  </script>
+</body>
+
+</html>
